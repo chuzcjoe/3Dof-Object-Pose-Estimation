@@ -58,7 +58,7 @@ class TrainDataSet(Dataset):
         self.data_list = os.listdir(os.path.join(self.data_dir, 'bg_imgs'))
         self.length = len(self.data_list)
 
-    def __getitem__(self, index):
+    def __getitem__(self, index, crop=False):
         # data basename
         base_name, _ = self.data_list[index].split('.')
 
@@ -66,17 +66,19 @@ class TrainDataSet(Dataset):
         img = Image.open(os.path.join(self.data_dir, "bg_imgs/" + base_name + ".jpg"))
         img = img.convert(self.image_mode)
 
-        # get face bounding box
-        pt2d = get_label_from_txt(os.path.join(self.data_dir, "bbox/" + base_name + ".txt"))
-        x_min, y_min, x_max, y_max = pt2d
+        if crop:
 
-        # crop face loosely:k=0to 0.2
-        k = np.random.random_sample() * 0.1
-        x_min -= 0.6 * k * abs(x_max - x_min)
-        y_min -= k * abs(y_max - y_min)
-        x_max += 0.6 * k * abs(x_max - x_min)
-        y_max += 0.6 * k * abs(y_max - y_min)
-        img = img.crop((int(x_min), int(y_min), int(x_max), int(y_max)))
+            # get face bounding box
+            pt2d = get_label_from_txt(os.path.join(self.data_dir, "bbox/" + base_name + ".txt"))
+            x_min, y_min, x_max, y_max = pt2d
+
+            # crop face loosely:k=0to 0.2
+            k = np.random.random_sample() * 0.1
+            x_min -= 0.6 * k * abs(x_max - x_min)
+            y_min -= k * abs(y_max - y_min)
+            x_max += 0.6 * k * abs(x_max - x_min)
+            y_max += 0.6 * k * abs(y_max - y_min)
+            img = img.crop((int(x_min), int(y_min), int(x_max), int(y_max)))
 
         # Augmentation:Blur?
         if np.random.random_sample() < 0.05:
@@ -101,7 +103,7 @@ class TrainDataSet(Dataset):
         vector_label = torch.FloatTensor(vector_label)
 
         # classification label
-        classify_label = torch.LongTensor(np.digitize(vector_label, self.bins))
+        classify_label = torch.LongTensor(np.digitize(vector_label, self.bins)) # return the index
         classify_label = np.where(classify_label > self.num_classes, self.num_classes, classify_label)
         classify_label = np.where(classify_label < 1, 1, classify_label)
 
