@@ -161,6 +161,15 @@ def get_label_from_txt(txt_path):
     return label
 
 
+def get_front_vector(txt_path):
+    with open(txt_path, 'r') as fr:
+        line = fr.read().splitlines()
+    line = line[0].split(',')
+    label = [float(i) for i in line]
+
+    return label
+
+
 def degress_score(cos_value, error_degrees):
     """
     get collect score
@@ -189,6 +198,8 @@ def get_attention_vector(quat):
 
     # return np.hstack([v_front, v_top])
     return v_front
+
+
 
 
 def get_soft_label(cls_label, num_classes):
