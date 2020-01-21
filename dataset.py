@@ -11,7 +11,7 @@ from utils import get_soft_label
 from torchvision import transforms
 from utils import get_label_from_txt
 from torch.utils.data import DataLoader
-from utils import get_attention_vector
+from utils import get_attention_vector, get_front_vector
 from torch.utils.data.dataset import Dataset
 
 
@@ -96,11 +96,16 @@ class TrainDataSet(Dataset):
         img = img[np.array([2, 1, 0]), :, :]
 
         # get pose quat
-        quat = get_label_from_txt(os.path.join(self.data_dir, "info/" + base_name + '.txt'))
+        #quat = get_label_from_txt(os.path.join(self.data_dir, "info/" + base_name + '.txt'))
 
         # face orientation vector
-        vector_label = get_attention_vector(quat)
+        #vector_label = get_attention_vector(quat)
+
+        #get one front vector
+        vector_label = get_front_vector(os.path.join(self.data_dir, "info/" + base_name + '.txt'))
         vector_label = torch.FloatTensor(vector_label)
+
+        #get front vector and right vector
 
         # classification label
         classify_label = torch.LongTensor(np.digitize(vector_label, self.bins)) # return the index
@@ -132,27 +137,29 @@ class TestDataSet(Dataset):
         self.image_mode = image_mode
         self.length = len(self.data_list)
 
-    def __getitem__(self, index):
+    def __getitem__(self, index, crop=False):
         base_name = self.data_list[index][:-4]
         img = Image.open(os.path.join(self.data_dir, 'bg_imgs/' + base_name + '.jpg'))
         img = img.convert(self.image_mode)
 
-        # get face bbox
-        bbox_path = os.path.join(self.data_dir, 'bbox/' + base_name + '.txt')
+        if crop:
 
-        pt2d = get_label_from_txt(bbox_path)
-        x_min = pt2d[0]
-        y_min = pt2d[1]
-        x_max = pt2d[2]
-        y_max = pt2d[3]
+            # get face bbox
+            bbox_path = os.path.join(self.data_dir, 'bbox/' + base_name + '.txt')
 
-        # Crop the face loosely
-        k = 0.1
-        x_min -= k * abs(x_max - x_min)
-        y_min -= k * abs(y_max - y_min)
-        x_max += k * abs(x_max - x_min)
-        y_max += 0.3 * k * abs(y_max - y_min)
-        img = img.crop((int(x_min), int(y_min), int(x_max), int(y_max)))
+            pt2d = get_label_from_txt(bbox_path)
+            x_min = pt2d[0]
+            y_min = pt2d[1]
+            x_max = pt2d[2]
+            y_max = pt2d[3]
+
+            # Crop the face loosely
+            k = 0.1
+            x_min -= k * abs(x_max - x_min)
+            y_min -= k * abs(y_max - y_min)
+            x_max += k * abs(x_max - x_min)
+            y_max += 0.3 * k * abs(y_max - y_min)
+            img = img.crop((int(x_min), int(y_min), int(x_max), int(y_max)))
 
         # get pose angle pitch,yaw,roll(degrees)
         angle_path = os.path.join(self.data_dir, 'angles/' + base_name + '.txt')
@@ -164,7 +171,9 @@ class TestDataSet(Dataset):
         quat = get_label_from_txt(quat_path)
 
         # Attention vector
-        attention_vector = get_attention_vector(quat)
+        #attention_vector = get_attention_vector(quat)
+
+        attention_vector = get_front_vector(os.path.join(self.data_dir, "info/" + base_name + '.txt'))
         vector_label = torch.FloatTensor(attention_vector)
 
         # classification label
