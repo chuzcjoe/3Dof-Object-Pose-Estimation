@@ -11,7 +11,7 @@ from utils import get_soft_label
 from torchvision import transforms
 from utils import get_label_from_txt
 from torch.utils.data import DataLoader
-from utils import get_attention_vector, get_front_vector
+from utils import get_attention_vector, get_front_vector, angle2vector
 from torch.utils.data.dataset import Dataset
 
 
@@ -23,7 +23,7 @@ def loadData(data_dir, input_size, batch_size, num_classes, training=True):
     # define transformation
     if training:
         transformations = transforms.Compose([transforms.Resize(int(np.ceil(input_size * 1.0714))),
-                                              transforms.RandomCrop(input_size),
+                                              transforms.RandomCrop(input_size), # delete(will cause object translation)
                                               transforms.ToTensor(),
                                               transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])])
         dataset = TrainDataSet(data_dir, transformations, num_classes)
@@ -102,7 +102,7 @@ class TrainDataSet(Dataset):
         #vector_label = get_attention_vector(quat)
 
         #get one front vector
-        vector_label = get_front_vector(os.path.join(self.data_dir, "info/" + base_name + '.txt'))
+        vector_label = angle2vector(os.path.join(self.data_dir, "info/" + base_name + '.txt'))
         vector_label = torch.FloatTensor(vector_label)
 
         #get front vector and right vector
@@ -167,13 +167,13 @@ class TestDataSet(Dataset):
         angle = torch.FloatTensor(angle)
 
         # get pose quat
-        quat_path = os.path.join(self.data_dir, 'info/' + base_name + '.txt')
-        quat = get_label_from_txt(quat_path)
+        #quat_path = os.path.join(self.data_dir, 'info/' + base_name + '.txt')
+        #quat = get_label_from_txt(quat_path)
 
         # Attention vector
         #attention_vector = get_attention_vector(quat)
 
-        attention_vector = get_front_vector(os.path.join(self.data_dir, "info/" + base_name + '.txt'))
+        attention_vector = angle2vector(os.path.join(self.data_dir, "info/" + base_name + '.txt'))
         vector_label = torch.FloatTensor(attention_vector)
 
         # classification label
