@@ -9,9 +9,9 @@ from PIL import Image
 from PIL import ImageFilter
 from utils import get_soft_label
 from torchvision import transforms
-from utils import get_label_from_txt
+from utils import get_label_from_txt, get_info_from_txt
 from torch.utils.data import DataLoader
-from utils import get_attention_vector, get_front_vector, angle2vector
+from utils import get_attention_vector, get_vectors
 from torch.utils.data.dataset import Dataset
 
 
@@ -97,18 +97,20 @@ class TrainDataSet(Dataset):
 
         # get pose quat
         #quat = get_label_from_txt(os.path.join(self.data_dir, "info/" + base_name + '.txt'))
-
+        info = get_info_from_txt(os.path.join(self.data_dir, "info/" + base_name + '.txt'))
         # face orientation vector
         #vector_label = get_attention_vector(quat)
 
         #get one front vector
-        vector_label = angle2vector(os.path.join(self.data_dir, "info/" + base_name + '.txt'))
-        vector_label = torch.FloatTensor(vector_label)
+        #vector_label = angle2vector(os.path.join(self.data_dir, "info/" + base_name + '.txt'))
+        #vector_label = torch.FloatTensor(vector_label)
 
         #get front vector and right vector
+        front_vector, _  = get_vectors(info)
+        vector_label = torch.FloatTensor(front_vector)
 
         # classification label
-        classify_label = torch.LongTensor(np.digitize(vector_label, self.bins)) # return the index
+        classify_label = torch.LongTensor(np.digitize(front_vector, self.bins)) # return the index
         classify_label = np.where(classify_label > self.num_classes, self.num_classes, classify_label)
         classify_label = np.where(classify_label < 1, 1, classify_label)
 
@@ -169,16 +171,17 @@ class TestDataSet(Dataset):
         # get pose quat
         #quat_path = os.path.join(self.data_dir, 'info/' + base_name + '.txt')
         #quat = get_label_from_txt(quat_path)
+        info = get_info_from_txt(os.path.join(self.data_dir, 'info/' + base_name + '.txt'))
 
         # Attention vector
         #attention_vector = get_attention_vector(quat)
 
-        attention_vector = angle2vector(os.path.join(self.data_dir, "info/" + base_name + '.txt'))
-        vector_label = torch.FloatTensor(attention_vector)
+        front_vector,_ = get_vectors(info)
+        vector_label = torch.FloatTensor(front_vector)
 
         # classification label
         bins = np.array(range(-99, 100, self.bin_size)) / 99
-        classify_label = torch.LongTensor(np.digitize(attention_vector, bins))  # 1-num_classes
+        classify_label = torch.LongTensor(np.digitize(front_vector, bins))  # 1-num_classes
         classify_label = np.where(classify_label > self.num_classes, self.num_classes, classify_label)
         classify_label = np.where(classify_label < 1, 1, classify_label)
 
