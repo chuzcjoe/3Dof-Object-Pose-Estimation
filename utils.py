@@ -8,9 +8,10 @@ import torch
 import numpy as np
 import matplotlib
 matplotlib.use("Agg")
+import math
 import matplotlib.pyplot as plt
 from math import cos, sin
-from rotation import Rotation as R
+#from rotation import Rotation as R
 
 
 def mkdir(dir_path):
@@ -170,6 +171,25 @@ def get_front_vector(txt_path):
     return label
 
 
+def get_info_from_txt(txt_path):
+    with open(txt_path, 'r') as fr:
+        lines = fr.read().splitlines()
+    
+    line = lines[0].split(' ')
+    label1 = [float(i) for i in line]
+
+    line = lines[1].split(' ')
+    label2 = [float(i) for i in line]
+
+    line = lines[2].split(' ')
+    label3 = [float(i) for i in line]
+
+    line = lines[3].split(' ')
+    label4 = [float(i) for i in line]
+
+    return [label1,label2,label3,label4]
+
+
 def degress_score(cos_value, error_degrees):
     """
     get collect score
@@ -179,6 +199,32 @@ def degress_score(cos_value, error_degrees):
     """
     score = torch.tensor([1.0 if i > cos(error_degrees * np.pi / 180) else 0.0 for i in cos_value])
     return score
+
+
+def get_transform(rx, ry, rz):
+    '''
+    Args:
+        rx, ry, rz: rotation along x, y, z axes (in radians)
+    Returns:
+        transform: 3*3 rotation matrix
+    '''
+    R_x = np.array([[1.0, 0.0, 0.0],
+                    [0.0, np.cos(rx), np.sin(rx)],
+                    [0.0, -np.sin(rx), np.cos(rx)]])
+
+    R_y = np.array([[np.cos(ry), 0.0, -np.sin(ry)],
+                    [0.0, 1.0, 0.0],
+                    [np.sin(ry), 0.0, np.cos(ry)]])
+
+    R_z = np.array([[np.cos(rz), -np.sin(rz), 0.0],
+                    [np.sin(rz), np.cos(rz), 0.0],
+                    [0.0, 0.0, 1.0]])
+    
+    # x = np.array([1.0, 0.0, 0.0])
+    # y = np.array([0.0, 1.0, 0.0])
+    # z = np.array([0.0, 0.0, 1.0])
+    # n = np.array([1.0, 1.0, 0.0])
+    return R_z @ R_y @ R_x
 
 
 def get_attention_vector(quat):
@@ -199,6 +245,48 @@ def get_attention_vector(quat):
     # return np.hstack([v_front, v_top])
     return v_front
 
+
+def get_vectors(info):
+
+
+    # camera (x, y, z)
+    # We don't use them for now
+    xc_val = float(info[0][0])
+    yc_val = float(info[0][1])
+    zc_val = float(info[0][2])
+
+    # camera (roll, pitch, yaw)
+    pitchc_val = float(info[1][0])
+    yawc_val = float(info[1][1])
+    rollc_val = float(info[1][2])
+
+    # --------------------------------
+
+    # object (x, y, z)
+    xo_val = float(info[2][0])
+    yo_val = float(info[2][1])
+    zo_val = float(info[2][2])
+
+    # object (roll, pitch, yaw)
+    pitcho_val = float(info[3][0])
+    yawo_val = float(info[3][1])
+    rollo_val = float(info[3][2])
+
+    # [roll, pitch, yaw] of cameras& objects in the world
+    rpy_cw = np.array([rollc_val, pitchc_val, yawc_val])
+    rpy_ow = np.array([rollo_val, pitcho_val, yawo_val])
+
+    rpy_cw = [math.radians(x) for x in rpy_cw]
+    rpy_ow = [math.radians(x) for x in rpy_ow]
+
+    # get the transformations
+    T_wo = get_transform(rpy_ow[0], rpy_ow[1], rpy_ow[2])
+    T_wc = get_transform(rpy_cw[0], rpy_cw[1], rpy_cw[2])
+
+    vec_ocx = np.linalg.inv(T_wc) @ T_wo @ np.array([1.0, 0.0, 0.0])
+    vec_ocy = np.linalg.inv(T_wc) @ T_wo @ np.array([0.0, 1.0, 0.0])
+
+    return vec_ocx, vec_ocy
 
 
 
