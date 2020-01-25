@@ -28,11 +28,11 @@ def parse_args():
     parser.add_argument("--lr_decay", dest="lr_decay", help="learning rate decay rate",
                         default=1.0, type=float)
     parser.add_argument("--save_dir", dest="save_dir", help="directory path of saving results",
-                        default='/home/pizza/results', type=str)
+                        default='/home/zhiwen/pose/3Dof-Object-Pose-Estimation-master/results', type=str)
     parser.add_argument("--train_data", dest="train_data", help="directory path of train dataset",
-                        default="/home/pizza/dataset/300WLPQUAT", type=str)
+                        default="/home/zhiwen/pose/3Dof-Object-Pose-Estimation-master", type=str)
     parser.add_argument("--valid_data", dest="valid_data", help="directory path of valid dataset",
-                        default="/home/pizza/dataset/AFLW2000QUAT", type=str)
+                        default="/home/zhiwen/pose/3Dof-Object-Pose-Estimation-master", type=str)
     parser.add_argument("--snapshot", dest="snapshot", help="pre trained weight path",
                         default="", type=str)
     parser.add_argument("--unfreeze", dest="unfreeze", help="unfreeze some layer after several epochs",
@@ -89,7 +89,6 @@ def valid(model, valid_loader, softmax):
             count += 1.
     return degrees_error / count
 
-
 def train():
     """
     :return:
@@ -104,6 +103,7 @@ def train():
     # loading data
     logger.logger.info("Loading data".center(100, '='))
     train_data_loader, valid_data_loader = loadData(args.train_data, args.input_size, args.batch_size, args.num_classes)
+    print()
 
     # initialize loss function
     cls_criterion = nn.BCEWithLogitsLoss().cuda(0)
@@ -118,6 +118,7 @@ def train():
     lr = args.lr
     step = 0
     for epoch in range(args.epochs + 1):
+        print("Epoch:", epoch)
         if epoch > args.unfreeze:
             optimizer = torch.optim.Adam([{"params": get_non_ignored_params(model), "lr": lr},
                                           {"params": get_cls_fc_params(model), "lr": lr}], lr=args.lr)
@@ -137,14 +138,15 @@ def train():
             logits = [x_cls_pred, y_cls_pred, z_cls_pred]
             loss, degree_error = utils.computeLoss(classify_label, vector_label, logits, softmax, cls_criterion, reg_criterion, args)
 
+            #print(loss)
             # backward
-            grad = [torch.ones(1).cuda(0) for _ in range(3)]
+            grad = [torch.tensor(1.0).cuda(0) for _ in range(3)]
             optimizer.zero_grad()
             torch.autograd.backward(loss, grad)
             optimizer.step()
 
             # save training log and weight
-            if (i + 1) % 100 == 0:
+            if (i + 1) % 10 == 0:
                 msg = "Epoch: %d/%d | Iter: %d/%d | x_loss: %.6f | y_loss: %.6f | z_loss: %.6f | degree_error:%.3f" % (
                     epoch, args.epochs, i + 1, len(train_data_loader.dataset) // args.batch_size, loss[0].item(), loss[1].item(),
                     loss[2].item(), degree_error.item())
