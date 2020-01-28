@@ -29,6 +29,8 @@ def loadData(data_dir, input_size, batch_size, num_classes, training=True):
         dataset = TrainDataSet(data_dir, transformations, num_classes)
         train_data_length = int(dataset.length * 0.8)
         valid_data_length = dataset.length - train_data_length
+        print("Traning sampels:", train_data_length)
+        print("Valid samples:", valid_data_length)
         train_data, valid_data = torch.utils.data.random_split(dataset, [train_data_length, valid_data_length])
         train_loader = DataLoader(dataset=train_data, batch_size=batch_size, shuffle=True, num_workers=4)
         valid_loader = DataLoader(dataset=valid_data, batch_size=batch_size, shuffle=False, num_workers=4)
@@ -55,7 +57,7 @@ class TrainDataSet(Dataset):
         self.image_mode = image_mode
         self.bins = np.array(range(-99, 100, self.bin_size)) / 99
 
-        self.data_list = os.listdir(os.path.join(self.data_dir, 'bg_imgs'))
+        self.data_list = os.listdir(os.path.join(self.data_dir, 'dataset/bg_imgs'))
         self.length = len(self.data_list)
 
     def __getitem__(self, index, crop=False):
@@ -63,7 +65,7 @@ class TrainDataSet(Dataset):
         base_name, _ = self.data_list[index].split('.')
 
         # read image file
-        img = Image.open(os.path.join(self.data_dir, "bg_imgs/" + base_name + ".jpg"))
+        img = Image.open(os.path.join(self.data_dir, "dataset/bg_imgs/" + base_name + ".jpg"))
         img = img.convert(self.image_mode)
 
         if crop:
@@ -97,7 +99,7 @@ class TrainDataSet(Dataset):
 
         # get pose quat
         #quat = get_label_from_txt(os.path.join(self.data_dir, "info/" + base_name + '.txt'))
-        info = get_info_from_txt(os.path.join(self.data_dir, "info/" + base_name + '.txt'))
+        info = get_info_from_txt(os.path.join(self.data_dir, "info_all/" + base_name + '.txt'))
         # face orientation vector
         #vector_label = get_attention_vector(quat)
 
@@ -121,7 +123,7 @@ class TrainDataSet(Dataset):
 
         soft_label = torch.stack([soft_label_x, soft_label_y, soft_label_z])
 
-        return img, soft_label, vector_label, os.path.join(self.data_dir, "bg_imgs/" + base_name + ".jpg")
+        return img, soft_label, vector_label, os.path.join(self.data_dir, "dataset/bg_imgs/" + base_name + ".jpg")
 
     def __len__(self):
         return self.length
@@ -134,14 +136,14 @@ class TestDataSet(Dataset):
         self.num_classes = num_classes
         self.bin_size = 198 // self.num_classes
 
-        self.data_list = os.listdir(os.path.join(self.data_dir, 'bg_imgs'))
+        self.data_list = os.listdir(os.path.join(self.data_dir, 'test_imgs'))
 
         self.image_mode = image_mode
         self.length = len(self.data_list)
 
     def __getitem__(self, index, crop=False):
         base_name = self.data_list[index][:-4]
-        img = Image.open(os.path.join(self.data_dir, 'bg_imgs/' + base_name + '.jpg'))
+        img = Image.open(os.path.join(self.data_dir, 'test_imgs/' + base_name + '.jpg'))
         img = img.convert(self.image_mode)
 
         if crop:
@@ -163,15 +165,15 @@ class TestDataSet(Dataset):
             y_max += 0.3 * k * abs(y_max - y_min)
             img = img.crop((int(x_min), int(y_min), int(x_max), int(y_max)))
 
-        # get pose angle pitch,yaw,roll(degrees)
-        angle_path = os.path.join(self.data_dir, 'angles/' + base_name + '.txt')
-        angle = get_label_from_txt(angle_path)
-        angle = torch.FloatTensor(angle)
+        # get pose angle pitch,yaw,roll(degrees) ANGLES NO NEEDED!!!
+        #angle_path = os.path.join(self.data_dir, 'angles/' + base_name + '.txt')
+        #angle = get_label_from_txt(angle_path)
+        #angle = torch.FloatTensor(angle)
 
         # get pose quat
         #quat_path = os.path.join(self.data_dir, 'info/' + base_name + '.txt')
         #quat = get_label_from_txt(quat_path)
-        info = get_info_from_txt(os.path.join(self.data_dir, 'info/' + base_name + '.txt'))
+        info = get_info_from_txt(os.path.join(self.data_dir, 'test_info/' + base_name + '.txt'))
 
         # Attention vector
         #attention_vector = get_attention_vector(quat)
@@ -198,7 +200,8 @@ class TestDataSet(Dataset):
         # RGB2BGR
         img = img[np.array([2, 1, 0]), :, :]
 
-        return img, soft_label, vector_label, angle, torch.FloatTensor(pt2d), os.path.join(self.data_dir, 'bg_imgs/' + base_name + '.jpg')
+        #return img, soft_label, vector_label, angle, torch.FloatTensor(pt2d), os.path.join(self.data_dir, 'test_imgs/' + base_name + '.jpg')
+        return img, soft_label, vector_label, os.path.join(self.data_dir, 'test_imgs/' + base_name + '.jpg')
 
     def __len__(self):
         # 1,969
