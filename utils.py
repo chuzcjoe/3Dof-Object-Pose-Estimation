@@ -104,7 +104,7 @@ def draw_front(img, x, y, tdx=None, tdy=None, size=100, color=(0, 255, 0)):
         height, width = img.shape[:2]
         tdx = width / 2
         tdy = height / 2
-    x2 = tdx - size * x
+    x2 = tdx + size * x
     y2 = tdy - size * y
     cv2.arrowedLine(img, (int(tdx), int(tdy)), (int(x2), int(y2)), color, 2, tipLength=0.3)
     return img
