@@ -15,19 +15,19 @@ def parse_args():
     """Parse input arguments."""
     parser = argparse.ArgumentParser(description='Head pose estimation using the Hopenet network.')
     parser.add_argument('--test_data', dest='test_data', help='Directory path for data.',
-                        default='/home/pizza/dataset/AFLW2000QUAT', type=str)
+                        default='/home/zhiwen/pose/3Dof-Object-Pose-Estimation-master', type=str)
     parser.add_argument('--snapshot', dest='snapshot', help='Name of model snapshot.',
                         default='', type=str)
     parser.add_argument('--batch_size', dest='batch_size', help='Batch size.',
-                        default=64, type=int)
+                        default=16, type=int)
     parser.add_argument('--degree_error_limit', dest='degree_error_limit', help='degrees error for calc cs',
                         default=10, type=int)
     parser.add_argument('--save_dir', dest='save_dir', help='directory for saving drawn pic',
-                        default='/home/pizza/results/MobileNetV2_1.0_classes_66_input_224', type=str)
+                        default='/home/zhiwen/pose/3Dof-Object-Pose-Estimation-master/visualization', type=str)
     parser.add_argument('--show_front', dest='show_front', help='show front or not',
                         default=True, type=bool)
     parser.add_argument('--analysis', dest='analysis', help='analysis result or not',
-                        default=True, type=bool)
+                        default=False, type=bool)
     parser.add_argument('--collect_score', dest='collect_score', help='show huge error or not',
                         default=True, type=bool)
     parser.add_argument('--num_classes', dest='num_classes', help='number of classify',
@@ -41,7 +41,7 @@ def parse_args():
     return args
 
 
-def draw_attention_vector(vector_label, angle_label, pred_vector, img_path, pt2d, args):
+def draw_attention_vector(vector_label, pred_vector, img_path, args):
     save_dir = os.path.join(args.save_dir, 'show_front')
     img_name = os.path.basename(img_path)
 
@@ -49,8 +49,8 @@ def draw_attention_vector(vector_label, angle_label, pred_vector, img_path, pt2d
 
     predx, predy, predz = pred_vector
 
-    start_x = (pt2d[0].item() + pt2d[2].item()) // 2
-    start_y = (pt2d[1].item() + pt2d[3].item()) // 2
+    #start_x = (pt2d[0].item() + pt2d[2].item()) // 2
+    #start_y = (pt2d[1].item() + pt2d[3].item()) // 2
 
     # draw GT attention vector with green
     # if 'DMS_TEST_DATA' in args.test_data.split('/'):
@@ -66,7 +66,7 @@ def draw_attention_vector(vector_label, angle_label, pred_vector, img_path, pt2d
     # utils.draw_bbox(img, pt2d)
 
     # draw pred attention vector with red
-    utils.draw_front(img, predx, predy, tdx=start_x, tdy=start_y, size=100, color=(0, 0, 255))
+    utils.draw_front(img, predy, predz, tdx=None, tdy=None, size=100, color=(0, 0, 255))
 
     cv.imwrite(os.path.join(save_dir, img_name), img)
 
@@ -78,7 +78,7 @@ def test(model, test_loader, softmax, args):
     error = 0.0
     total = 0.0
     score = 0.0
-    for i, (images, classify_label, vector_label, angle_label, pt2d, names) in enumerate(tqdm.tqdm(test_loader)):
+    for i, (images, classify_label, vector_label, names) in enumerate(tqdm.tqdm(test_loader)):
         with torch.no_grad():
             images = images.cuda(0)
             vector_label = vector_label.cuda(0)
@@ -111,10 +111,8 @@ def test(model, test_loader, softmax, args):
                 utils.mkdir(os.path.join(args.save_dir, 'show_front'))
                 for j in range(vector_label.size(0)):
                     draw_attention_vector(vector_label[j].cpu().tolist(),
-                                          angle_label[j].cpu().tolist(),
                                           pred_vector[j].cpu().tolist(),
                                           names[j],
-                                          pt2d[j],
                                           args)
 
     avg_error = error / total
