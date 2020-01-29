@@ -16,6 +16,5 @@ python train.py  --num_classes [33,66] --num_epochs --lr --lr_decay --unfreeze
 python test.py --snapshot --analysis
 
 ## Visualizing predicted front vector
-
-![images](https://github.com/chuzcjoe/3Dof-Object-Pose-Estimation/raw/master/test.jpg)
+<img src="https://github.com/chuzcjoe/3Dof-Object-Pose-Estimation/raw/master/test.jpg" width="200">
 
