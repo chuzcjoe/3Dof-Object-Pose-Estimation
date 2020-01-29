@@ -14,3 +14,6 @@ python train.py  --num_classes [33,66] --num_epochs --lr --lr_decay --unfreeze
 ## Test
 
 python test.py --snapshot --analysis
+
+## Visualizing predicted front vector
+
