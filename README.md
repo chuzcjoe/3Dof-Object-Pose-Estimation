@@ -16,7 +16,7 @@ python train.py  --num_classes [33,66] --num_epochs --lr --lr_decay --unfreeze
 python test.py --snapshot --analysis
 
 ## Dataset
-Train size: 7800 <br>
+Training size: 7800 <br>
 Validation size: 1950<br>
 Avg angle error on training data(50 epoches): 1.779 degree(s)<br>
 Avg angle error on validation data(50 epoches): 2.359545946121216 degree(s)<br>
