@@ -15,8 +15,8 @@ from PIL import ImageFilter
 
 class Test():
 
-    def __int__(self,model,snapshot):
-        self.model = model(num_classes=args.num_classes)
+    def __int__(self,model,snapshot,num_classes=66):
+        self.model = model(num_classes=num_classes)
 
         self.saved_state_dict = torch.load(snapshot)
         self.model.load_state_dict(self.saved_state_dict)
