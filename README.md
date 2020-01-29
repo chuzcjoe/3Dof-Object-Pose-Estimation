@@ -17,3 +17,5 @@ python test.py --snapshot --analysis
 
 ## Visualizing predicted front vector
 
+![images](https://github.com/chuzcjoe/3Dof-Object-Pose-Estimation/raw/master/test.jpg)
+
