@@ -11,9 +11,13 @@ python train.py  --num_classes [33,66] --num_epochs --lr --lr_decay --unfreeze
 
 --save_dir
 
-## Test
+## Test on testing dataset
 
 python test.py --snapshot --analysis
+
+## Video testing
+
+python video_demo.py --video --snapshot
 
 ## Dataset
 Training size: 7800 <br>
