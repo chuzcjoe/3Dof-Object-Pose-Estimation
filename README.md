@@ -26,6 +26,10 @@ Training loss(50 epoches): x_loss: 0.074635 | y_loss: 0.073857 | z_loss: 0.07753
 <img src="https://github.com/chuzcjoe/3Dof-Object-Pose-Estimation/raw/master/collect_score.png" width="500">
 
 
+## Check our video demo here
+
+[youtube](https://www.youtube.com/watch?v=Gxo8jXZ0b2Q)
+
 ## Visualizing predicted front vector
 <img src="https://github.com/chuzcjoe/3Dof-Object-Pose-Estimation/raw/master/test.jpg" width="500">
 
