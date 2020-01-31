@@ -15,6 +15,10 @@ python train.py  --num_classes [33,66] --num_epochs --lr --lr_decay --unfreeze
 
 python test.py --snapshot --analysis
 
+## Single image testing
+
+python test_on_img.py --img --snapshot
+
 ## Video testing
 
 python video_demo.py --video --snapshot
