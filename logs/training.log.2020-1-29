@@ -1,0 +1,332 @@
+2020-01-30 20:04:28,633: =============================================Parameters=============================================
+2020-01-30 20:04:28,633: 
+input_size:224
+unfreeze:10
+num_classes:66
+epochs:50
+batch_size:16
+lr:0.000010
+lr_decay:1.000000
+alpha:1.000000
+
+2020-01-30 20:04:28,665: =====================================Loading PreTrained Weight======================================
+2020-01-30 20:04:28,690: ============================================Loading data============================================
+2020-01-30 20:04:31,704: ==============================================Training==============================================
+2020-01-30 20:04:38,397: Epoch: 0/50 | Iter: 100/487 | x_loss: 0.422455 | y_loss: 0.321651 | z_loss: 0.388908 | degree_error:16.708
+2020-01-30 20:04:45,914: A better validation degrees error 19.532867431640625
+2020-01-30 20:04:51,990: Epoch: 0/50 | Iter: 200/487 | x_loss: 0.271244 | y_loss: 0.175644 | z_loss: 0.214534 | degree_error:15.398
+2020-01-30 20:04:59,284: A better validation degrees error 15.174237251281738
+2020-01-30 20:05:05,415: Epoch: 0/50 | Iter: 300/487 | x_loss: 0.172385 | y_loss: 0.148465 | z_loss: 0.190937 | degree_error:15.468
+2020-01-30 20:05:12,691: A better validation degrees error 14.372411727905273
+2020-01-30 20:05:18,567: Epoch: 0/50 | Iter: 400/487 | x_loss: 0.163971 | y_loss: 0.123151 | z_loss: 0.159723 | degree_error:18.418
+2020-01-30 20:05:25,819: A better validation degrees error 13.410013198852539
+2020-01-30 20:05:36,958: Epoch: 1/50 | Iter: 100/487 | x_loss: 0.115688 | y_loss: 0.094111 | z_loss: 0.109063 | degree_error:10.677
+2020-01-30 20:05:44,220: A better validation degrees error 12.242743492126465
+2020-01-30 20:05:50,260: Epoch: 1/50 | Iter: 200/487 | x_loss: 0.104546 | y_loss: 0.094659 | z_loss: 0.115005 | degree_error:12.075
+2020-01-30 20:06:03,609: Epoch: 1/50 | Iter: 300/487 | x_loss: 0.135824 | y_loss: 0.130441 | z_loss: 0.188817 | degree_error:21.967
+2020-01-30 20:06:10,914: A better validation degrees error 11.842794418334961
+2020-01-30 20:06:16,611: Epoch: 1/50 | Iter: 400/487 | x_loss: 0.125166 | y_loss: 0.104414 | z_loss: 0.087509 | degree_error:11.615
+2020-01-30 20:06:23,911: A better validation degrees error 10.949743270874023
+2020-01-30 20:06:35,593: Epoch: 2/50 | Iter: 100/487 | x_loss: 0.093301 | y_loss: 0.084782 | z_loss: 0.107185 | degree_error:11.245
+2020-01-30 20:06:42,883: A better validation degrees error 10.594602584838867
+2020-01-30 20:06:48,922: Epoch: 2/50 | Iter: 200/487 | x_loss: 0.099326 | y_loss: 0.082476 | z_loss: 0.084747 | degree_error:8.973
+2020-01-30 20:06:56,253: A better validation degrees error 10.329863548278809
+2020-01-30 20:07:02,034: Epoch: 2/50 | Iter: 300/487 | x_loss: 0.113511 | y_loss: 0.106143 | z_loss: 0.100167 | degree_error:15.501
+2020-01-30 20:07:09,396: A better validation degrees error 9.647377967834473
+2020-01-30 20:07:15,462: Epoch: 2/50 | Iter: 400/487 | x_loss: 0.090510 | y_loss: 0.078555 | z_loss: 0.086511 | degree_error:7.702
+2020-01-30 20:07:34,684: Epoch: 3/50 | Iter: 100/487 | x_loss: 0.087582 | y_loss: 0.086012 | z_loss: 0.091945 | degree_error:8.908
+2020-01-30 20:07:42,065: A better validation degrees error 9.311012268066406
+2020-01-30 20:07:47,777: Epoch: 3/50 | Iter: 200/487 | x_loss: 0.094046 | y_loss: 0.086076 | z_loss: 0.105054 | degree_error:10.664
+2020-01-30 20:07:55,175: A better validation degrees error 8.925036430358887
+2020-01-30 20:08:01,331: Epoch: 3/50 | Iter: 300/487 | x_loss: 0.093051 | y_loss: 0.082139 | z_loss: 0.086346 | degree_error:8.288
+2020-01-30 20:08:08,653: A better validation degrees error 8.654937744140625
+2020-01-30 20:08:14,709: Epoch: 3/50 | Iter: 400/487 | x_loss: 0.083289 | y_loss: 0.081750 | z_loss: 0.080694 | degree_error:6.233
+2020-01-30 20:08:33,623: Epoch: 4/50 | Iter: 100/487 | x_loss: 0.082800 | y_loss: 0.086782 | z_loss: 0.081886 | degree_error:7.036
+2020-01-30 20:08:40,919: A better validation degrees error 8.941856384277344
+2020-01-30 20:08:46,693: Epoch: 4/50 | Iter: 200/487 | x_loss: 0.096393 | y_loss: 0.080965 | z_loss: 0.082799 | degree_error:8.361
+2020-01-30 20:08:54,050: A better validation degrees error 8.662174224853516
+2020-01-30 20:09:00,099: Epoch: 4/50 | Iter: 300/487 | x_loss: 0.083747 | y_loss: 0.078885 | z_loss: 0.079459 | degree_error:5.724
+2020-01-30 20:09:07,435: A better validation degrees error 8.225699424743652
+2020-01-30 20:09:13,263: Epoch: 4/50 | Iter: 400/487 | x_loss: 0.081542 | y_loss: 0.077073 | z_loss: 0.082388 | degree_error:5.786
+2020-01-30 20:09:20,653: A better validation degrees error 8.108063697814941
+2020-01-30 20:09:32,294: Epoch: 5/50 | Iter: 100/487 | x_loss: 0.083354 | y_loss: 0.082133 | z_loss: 0.103268 | degree_error:9.567
+2020-01-30 20:09:39,678: A better validation degrees error 8.460223197937012
+2020-01-30 20:09:45,634: Epoch: 5/50 | Iter: 200/487 | x_loss: 0.084935 | y_loss: 0.077512 | z_loss: 0.091501 | degree_error:7.878
+2020-01-30 20:09:52,936: A better validation degrees error 7.566773414611816
+2020-01-30 20:09:58,854: Epoch: 5/50 | Iter: 300/487 | x_loss: 0.087115 | y_loss: 0.088993 | z_loss: 0.083686 | degree_error:9.328
+2020-01-30 20:10:12,210: Epoch: 5/50 | Iter: 400/487 | x_loss: 0.080889 | y_loss: 0.097356 | z_loss: 0.084100 | degree_error:8.239
+2020-01-30 20:10:19,602: A better validation degrees error 6.9656524658203125
+2020-01-30 20:10:31,427: Epoch: 6/50 | Iter: 100/487 | x_loss: 0.081045 | y_loss: 0.079034 | z_loss: 0.082310 | degree_error:5.377
+2020-01-30 20:10:38,822: A better validation degrees error 6.937697887420654
+2020-01-30 20:10:44,687: Epoch: 6/50 | Iter: 200/487 | x_loss: 0.082771 | y_loss: 0.081938 | z_loss: 0.086290 | degree_error:7.517
+2020-01-30 20:10:58,288: Epoch: 6/50 | Iter: 300/487 | x_loss: 0.084971 | y_loss: 0.081377 | z_loss: 0.082857 | degree_error:7.410
+2020-01-30 20:11:05,588: A better validation degrees error 6.889535427093506
+2020-01-30 20:11:10,949: Epoch: 6/50 | Iter: 400/487 | x_loss: 0.083122 | y_loss: 0.079900 | z_loss: 0.113724 | degree_error:7.427
+2020-01-30 20:11:18,250: A better validation degrees error 6.637260913848877
+2020-01-30 20:11:30,271: Epoch: 7/50 | Iter: 100/487 | x_loss: 0.086070 | y_loss: 0.082833 | z_loss: 0.081171 | degree_error:7.341
+2020-01-30 20:11:37,573: A better validation degrees error 6.805444240570068
+2020-01-30 20:11:43,288: Epoch: 7/50 | Iter: 200/487 | x_loss: 0.086416 | y_loss: 0.105640 | z_loss: 0.088848 | degree_error:9.831
+2020-01-30 20:11:56,638: Epoch: 7/50 | Iter: 300/487 | x_loss: 0.077576 | y_loss: 0.076998 | z_loss: 0.079937 | degree_error:3.653
+2020-01-30 20:12:03,929: A better validation degrees error 6.621885776519775
+2020-01-30 20:12:10,017: Epoch: 7/50 | Iter: 400/487 | x_loss: 0.078595 | y_loss: 0.076887 | z_loss: 0.079867 | degree_error:3.970
+2020-01-30 20:12:17,306: A better validation degrees error 6.260016918182373
+2020-01-30 20:12:29,214: Epoch: 8/50 | Iter: 100/487 | x_loss: 0.081023 | y_loss: 0.081253 | z_loss: 0.085579 | degree_error:6.691
+2020-01-30 20:12:36,490: A better validation degrees error 6.765921115875244
+2020-01-30 20:12:42,563: Epoch: 8/50 | Iter: 200/487 | x_loss: 0.092105 | y_loss: 0.094422 | z_loss: 0.142138 | degree_error:12.655
+2020-01-30 20:12:49,853: A better validation degrees error 6.437314510345459
+2020-01-30 20:12:55,903: Epoch: 8/50 | Iter: 300/487 | x_loss: 0.080469 | y_loss: 0.076341 | z_loss: 0.081298 | degree_error:4.420
+2020-01-30 20:13:03,203: A better validation degrees error 5.836727142333984
+2020-01-30 20:13:09,308: Epoch: 8/50 | Iter: 400/487 | x_loss: 0.083878 | y_loss: 0.100830 | z_loss: 0.084301 | degree_error:7.527
+2020-01-30 20:13:28,478: Epoch: 9/50 | Iter: 100/487 | x_loss: 0.097175 | y_loss: 0.077117 | z_loss: 0.078721 | degree_error:7.894
+2020-01-30 20:13:35,712: A better validation degrees error 6.266594886779785
+2020-01-30 20:13:41,760: Epoch: 9/50 | Iter: 200/487 | x_loss: 0.093274 | y_loss: 0.078169 | z_loss: 0.222745 | degree_error:10.140
+2020-01-30 20:13:55,119: Epoch: 9/50 | Iter: 300/487 | x_loss: 0.080691 | y_loss: 0.078346 | z_loss: 0.081156 | degree_error:5.738
+2020-01-30 20:14:02,421: A better validation degrees error 6.063594341278076
+2020-01-30 20:14:08,486: Epoch: 9/50 | Iter: 400/487 | x_loss: 0.081641 | y_loss: 0.084228 | z_loss: 0.086070 | degree_error:7.998
+2020-01-30 20:14:15,797: A better validation degrees error 5.852267742156982
+2020-01-30 20:14:27,417: Epoch: 10/50 | Iter: 100/487 | x_loss: 0.076919 | y_loss: 0.082907 | z_loss: 0.086191 | degree_error:6.685
+2020-01-30 20:14:34,781: A better validation degrees error 6.327566146850586
+2020-01-30 20:14:40,430: Epoch: 10/50 | Iter: 200/487 | x_loss: 0.078570 | y_loss: 0.079553 | z_loss: 0.091593 | degree_error:6.867
+2020-01-30 20:14:47,807: A better validation degrees error 5.876912593841553
+2020-01-30 20:14:53,887: Epoch: 10/50 | Iter: 300/487 | x_loss: 0.087594 | y_loss: 0.076534 | z_loss: 0.087729 | degree_error:7.176
+2020-01-30 20:15:01,352: A better validation degrees error 5.504396915435791
+2020-01-30 20:15:07,460: Epoch: 10/50 | Iter: 400/487 | x_loss: 0.082077 | y_loss: 0.076694 | z_loss: 0.083528 | degree_error:5.983
+2020-01-30 20:15:26,678: Epoch: 11/50 | Iter: 100/487 | x_loss: 0.078201 | y_loss: 0.075681 | z_loss: 0.080423 | degree_error:3.569
+2020-01-30 20:15:33,973: A better validation degrees error 4.802406311035156
+2020-01-30 20:15:40,055: Epoch: 11/50 | Iter: 200/487 | x_loss: 0.078235 | y_loss: 0.075753 | z_loss: 0.079627 | degree_error:3.347
+2020-01-30 20:15:52,945: Epoch: 11/50 | Iter: 300/487 | x_loss: 0.078704 | y_loss: 0.076992 | z_loss: 0.077908 | degree_error:3.847
+2020-01-30 20:16:00,199: A better validation degrees error 4.501613616943359
+2020-01-30 20:16:06,266: Epoch: 11/50 | Iter: 400/487 | x_loss: 0.083919 | y_loss: 0.076037 | z_loss: 0.079890 | degree_error:5.480
+2020-01-30 20:16:25,333: Epoch: 12/50 | Iter: 100/487 | x_loss: 0.077699 | y_loss: 0.076184 | z_loss: 0.078299 | degree_error:3.253
+2020-01-30 20:16:32,761: A better validation degrees error 4.48477840423584
+2020-01-30 20:16:38,480: Epoch: 12/50 | Iter: 200/487 | x_loss: 0.077207 | y_loss: 0.087342 | z_loss: 0.085071 | degree_error:5.374
+2020-01-30 20:16:51,849: Epoch: 12/50 | Iter: 300/487 | x_loss: 0.077713 | y_loss: 0.075935 | z_loss: 0.078150 | degree_error:3.349
+2020-01-30 20:16:59,301: A better validation degrees error 4.433945655822754
+2020-01-30 20:17:05,378: Epoch: 12/50 | Iter: 400/487 | x_loss: 0.079645 | y_loss: 0.078919 | z_loss: 0.086303 | degree_error:6.495
+2020-01-30 20:17:12,689: A better validation degrees error 4.345571041107178
+2020-01-30 20:17:24,679: Epoch: 13/50 | Iter: 100/487 | x_loss: 0.078444 | y_loss: 0.077224 | z_loss: 0.077852 | degree_error:3.351
+2020-01-30 20:17:31,984: A better validation degrees error 4.2264628410339355
+2020-01-30 20:17:37,559: Epoch: 13/50 | Iter: 200/487 | x_loss: 0.077026 | y_loss: 0.076039 | z_loss: 0.078998 | degree_error:3.073
+2020-01-30 20:17:44,839: A better validation degrees error 4.223178386688232
+2020-01-30 20:17:50,911: Epoch: 13/50 | Iter: 300/487 | x_loss: 0.077921 | y_loss: 0.076333 | z_loss: 0.079147 | degree_error:3.659
+2020-01-30 20:18:04,252: Epoch: 13/50 | Iter: 400/487 | x_loss: 0.078205 | y_loss: 0.077145 | z_loss: 0.079720 | degree_error:4.058
+2020-01-30 20:18:23,313: Epoch: 14/50 | Iter: 100/487 | x_loss: 0.077918 | y_loss: 0.076590 | z_loss: 0.078487 | degree_error:3.009
+2020-01-30 20:18:30,654: A better validation degrees error 4.094390869140625
+2020-01-30 20:18:36,457: Epoch: 14/50 | Iter: 200/487 | x_loss: 0.076299 | y_loss: 0.074988 | z_loss: 0.078450 | degree_error:2.407
+2020-01-30 20:18:49,910: Epoch: 14/50 | Iter: 300/487 | x_loss: 0.080154 | y_loss: 0.075510 | z_loss: 0.078891 | degree_error:3.593
+2020-01-30 20:19:03,392: Epoch: 14/50 | Iter: 400/487 | x_loss: 0.077666 | y_loss: 0.079123 | z_loss: 0.081026 | degree_error:4.347
+2020-01-30 20:19:22,055: Epoch: 15/50 | Iter: 100/487 | x_loss: 0.079267 | y_loss: 0.076624 | z_loss: 0.080241 | degree_error:4.361
+2020-01-30 20:19:29,402: A better validation degrees error 4.057361125946045
+2020-01-30 20:19:35,292: Epoch: 15/50 | Iter: 200/487 | x_loss: 0.076361 | y_loss: 0.076145 | z_loss: 0.077555 | degree_error:2.129
+2020-01-30 20:19:48,661: Epoch: 15/50 | Iter: 300/487 | x_loss: 0.077778 | y_loss: 0.078962 | z_loss: 0.080567 | degree_error:3.844
+2020-01-30 20:19:55,935: A better validation degrees error 4.036061763763428
+2020-01-30 20:20:02,055: Epoch: 15/50 | Iter: 400/487 | x_loss: 0.081562 | y_loss: 0.076612 | z_loss: 0.093545 | degree_error:7.949
+2020-01-30 20:20:09,543: A better validation degrees error 4.001645565032959
+2020-01-30 20:20:21,400: Epoch: 16/50 | Iter: 100/487 | x_loss: 0.080190 | y_loss: 0.076293 | z_loss: 0.077865 | degree_error:3.924
+2020-01-30 20:20:28,700: A better validation degrees error 3.9037587642669678
+2020-01-30 20:20:34,594: Epoch: 16/50 | Iter: 200/487 | x_loss: 0.080883 | y_loss: 0.076098 | z_loss: 0.078254 | degree_error:4.133
+2020-01-30 20:20:47,583: Epoch: 16/50 | Iter: 300/487 | x_loss: 0.077794 | y_loss: 0.075628 | z_loss: 0.079101 | degree_error:3.120
+2020-01-30 20:21:00,901: Epoch: 16/50 | Iter: 400/487 | x_loss: 0.078863 | y_loss: 0.076810 | z_loss: 0.078173 | degree_error:3.563
+2020-01-30 20:21:19,889: Epoch: 17/50 | Iter: 100/487 | x_loss: 0.077710 | y_loss: 0.081367 | z_loss: 0.078819 | degree_error:4.310
+2020-01-30 20:21:27,219: A better validation degrees error 3.914811611175537
+2020-01-30 20:21:33,007: Epoch: 17/50 | Iter: 200/487 | x_loss: 0.079711 | y_loss: 0.076830 | z_loss: 0.079992 | degree_error:4.533
+2020-01-30 20:21:45,976: Epoch: 17/50 | Iter: 300/487 | x_loss: 0.077324 | y_loss: 0.075566 | z_loss: 0.081504 | degree_error:3.219
+2020-01-30 20:21:59,372: Epoch: 17/50 | Iter: 400/487 | x_loss: 0.079346 | y_loss: 0.075705 | z_loss: 0.078016 | degree_error:3.567
+2020-01-30 20:22:18,308: Epoch: 18/50 | Iter: 100/487 | x_loss: 0.076170 | y_loss: 0.076187 | z_loss: 0.079153 | degree_error:3.354
+2020-01-30 20:22:25,604: A better validation degrees error 3.848543405532837
+2020-01-30 20:22:31,484: Epoch: 18/50 | Iter: 200/487 | x_loss: 0.084259 | y_loss: 0.076198 | z_loss: 0.078432 | degree_error:5.274
+2020-01-30 20:22:44,225: Epoch: 18/50 | Iter: 300/487 | x_loss: 0.076144 | y_loss: 0.076116 | z_loss: 0.077951 | degree_error:3.095
+2020-01-30 20:22:51,533: A better validation degrees error 3.715169668197632
+2020-01-30 20:22:57,560: Epoch: 18/50 | Iter: 400/487 | x_loss: 0.077438 | y_loss: 0.075829 | z_loss: 0.079592 | degree_error:3.436
+2020-01-30 20:23:16,640: Epoch: 19/50 | Iter: 100/487 | x_loss: 0.077627 | y_loss: 0.077407 | z_loss: 0.079372 | degree_error:3.659
+2020-01-30 20:23:30,927: Epoch: 19/50 | Iter: 200/487 | x_loss: 0.076820 | y_loss: 0.075525 | z_loss: 0.077825 | degree_error:2.336
+2020-01-30 20:23:38,242: A better validation degrees error 3.744933605194092
+2020-01-30 20:23:44,513: Epoch: 19/50 | Iter: 300/487 | x_loss: 0.077854 | y_loss: 0.075331 | z_loss: 0.078168 | degree_error:2.519
+2020-01-30 20:23:54,114: A better validation degrees error 3.560920238494873
+2020-01-30 20:24:01,340: Epoch: 19/50 | Iter: 400/487 | x_loss: 0.076966 | y_loss: 0.075446 | z_loss: 0.078642 | degree_error:2.582
+2020-01-30 20:24:25,185: Epoch: 20/50 | Iter: 100/487 | x_loss: 0.077101 | y_loss: 0.076543 | z_loss: 0.078358 | degree_error:3.088
+2020-01-30 20:24:34,173: A better validation degrees error 3.7177703380584717
+2020-01-30 20:24:41,680: Epoch: 20/50 | Iter: 200/487 | x_loss: 0.078033 | y_loss: 0.076254 | z_loss: 0.082813 | degree_error:4.985
+2020-01-30 20:24:51,265: A better validation degrees error 3.587806224822998
+2020-01-30 20:24:58,310: Epoch: 20/50 | Iter: 300/487 | x_loss: 0.077362 | y_loss: 0.078627 | z_loss: 0.078947 | degree_error:4.104
+2020-01-30 20:25:07,118: A better validation degrees error 3.5546860694885254
+2020-01-30 20:25:14,535: Epoch: 20/50 | Iter: 400/487 | x_loss: 0.077663 | y_loss: 0.076910 | z_loss: 0.078986 | degree_error:3.984
+2020-01-30 20:25:38,649: Epoch: 21/50 | Iter: 100/487 | x_loss: 0.077371 | y_loss: 0.074809 | z_loss: 0.077773 | degree_error:2.196
+2020-01-30 20:25:47,899: A better validation degrees error 3.5640597343444824
+2020-01-30 20:25:54,784: Epoch: 21/50 | Iter: 200/487 | x_loss: 0.077930 | y_loss: 0.075393 | z_loss: 0.080274 | degree_error:3.799
+2020-01-30 20:26:10,756: Epoch: 21/50 | Iter: 300/487 | x_loss: 0.078524 | y_loss: 0.075378 | z_loss: 0.078773 | degree_error:3.019
+2020-01-30 20:26:23,550: Epoch: 21/50 | Iter: 400/487 | x_loss: 0.078276 | y_loss: 0.075230 | z_loss: 0.078381 | degree_error:2.856
+2020-01-30 20:26:42,699: Epoch: 22/50 | Iter: 100/487 | x_loss: 0.077652 | y_loss: 0.076255 | z_loss: 0.078235 | degree_error:2.940
+2020-01-30 20:26:50,095: A better validation degrees error 3.7641472816467285
+2020-01-30 20:26:56,080: Epoch: 22/50 | Iter: 200/487 | x_loss: 0.077764 | y_loss: 0.075662 | z_loss: 0.077121 | degree_error:2.480
+2020-01-30 20:27:03,447: A better validation degrees error 3.5874457359313965
+2020-01-30 20:27:09,577: Epoch: 22/50 | Iter: 300/487 | x_loss: 0.075968 | y_loss: 0.076017 | z_loss: 0.078805 | degree_error:3.113
+2020-01-30 20:27:22,891: Epoch: 22/50 | Iter: 400/487 | x_loss: 0.076539 | y_loss: 0.077033 | z_loss: 0.079585 | degree_error:3.898
+2020-01-30 20:27:41,730: Epoch: 23/50 | Iter: 100/487 | x_loss: 0.080276 | y_loss: 0.075397 | z_loss: 0.080307 | degree_error:4.548
+2020-01-30 20:27:49,208: A better validation degrees error 3.411533832550049
+2020-01-30 20:27:55,947: Epoch: 23/50 | Iter: 200/487 | x_loss: 0.077502 | y_loss: 0.077142 | z_loss: 0.078078 | degree_error:3.615
+2020-01-30 20:28:11,487: Epoch: 23/50 | Iter: 300/487 | x_loss: 0.077500 | y_loss: 0.076113 | z_loss: 0.079192 | degree_error:3.272
+2020-01-30 20:28:27,192: Epoch: 23/50 | Iter: 400/487 | x_loss: 0.077915 | y_loss: 0.075655 | z_loss: 0.078904 | degree_error:3.219
+2020-01-30 20:28:50,302: Epoch: 24/50 | Iter: 100/487 | x_loss: 0.077303 | y_loss: 0.076006 | z_loss: 0.078049 | degree_error:3.501
+2020-01-30 20:28:57,588: A better validation degrees error 3.5462028980255127
+2020-01-30 20:29:03,651: Epoch: 24/50 | Iter: 200/487 | x_loss: 0.076627 | y_loss: 0.075742 | z_loss: 0.078018 | degree_error:2.873
+2020-01-30 20:29:10,961: A better validation degrees error 3.4270527362823486
+2020-01-30 20:29:17,099: Epoch: 24/50 | Iter: 300/487 | x_loss: 0.078747 | y_loss: 0.076115 | z_loss: 0.077169 | degree_error:3.457
+2020-01-30 20:29:30,425: Epoch: 24/50 | Iter: 400/487 | x_loss: 0.077930 | y_loss: 0.075277 | z_loss: 0.078217 | degree_error:2.599
+2020-01-30 20:29:49,359: Epoch: 25/50 | Iter: 100/487 | x_loss: 0.079603 | y_loss: 0.076110 | z_loss: 0.077674 | degree_error:3.601
+2020-01-30 20:29:56,688: A better validation degrees error 3.335265636444092
+2020-01-30 20:30:02,489: Epoch: 25/50 | Iter: 200/487 | x_loss: 0.076362 | y_loss: 0.079569 | z_loss: 0.079100 | degree_error:4.153
+2020-01-30 20:30:16,686: Epoch: 25/50 | Iter: 300/487 | x_loss: 0.076994 | y_loss: 0.075726 | z_loss: 0.077453 | degree_error:2.349
+2020-01-30 20:30:32,782: Epoch: 25/50 | Iter: 400/487 | x_loss: 0.076857 | y_loss: 0.076918 | z_loss: 0.078343 | degree_error:3.897
+2020-01-30 20:30:56,799: Epoch: 26/50 | Iter: 100/487 | x_loss: 0.077525 | y_loss: 0.075555 | z_loss: 0.080146 | degree_error:3.738
+2020-01-30 20:31:05,773: A better validation degrees error 3.3190364837646484
+2020-01-30 20:31:13,190: Epoch: 26/50 | Iter: 200/487 | x_loss: 0.076967 | y_loss: 0.075257 | z_loss: 0.079448 | degree_error:3.515
+2020-01-30 20:31:29,141: Epoch: 26/50 | Iter: 300/487 | x_loss: 0.078574 | y_loss: 0.077240 | z_loss: 0.079744 | degree_error:3.835
+2020-01-30 20:31:46,665: Epoch: 26/50 | Iter: 400/487 | x_loss: 0.078346 | y_loss: 0.076299 | z_loss: 0.079085 | degree_error:3.772
+2020-01-30 20:31:55,107: A better validation degrees error 3.2967140674591064
+2020-01-30 20:32:07,099: Epoch: 27/50 | Iter: 100/487 | x_loss: 0.075335 | y_loss: 0.076275 | z_loss: 0.078774 | degree_error:2.798
+2020-01-30 20:32:14,475: A better validation degrees error 3.311882972717285
+2020-01-30 20:32:20,513: Epoch: 27/50 | Iter: 200/487 | x_loss: 0.076153 | y_loss: 0.075600 | z_loss: 0.077430 | degree_error:2.003
+2020-01-30 20:32:27,776: A better validation degrees error 3.3024563789367676
+2020-01-30 20:32:33,837: Epoch: 27/50 | Iter: 300/487 | x_loss: 0.076567 | y_loss: 0.075998 | z_loss: 0.077384 | degree_error:2.920
+2020-01-30 20:32:47,094: Epoch: 27/50 | Iter: 400/487 | x_loss: 0.077305 | y_loss: 0.076825 | z_loss: 0.077903 | degree_error:2.986
+2020-01-30 20:32:54,377: A better validation degrees error 3.2868502140045166
+2020-01-30 20:33:06,370: Epoch: 28/50 | Iter: 100/487 | x_loss: 0.078834 | y_loss: 0.076779 | z_loss: 0.078649 | degree_error:4.264
+2020-01-30 20:33:13,625: A better validation degrees error 3.4123733043670654
+2020-01-30 20:33:19,692: Epoch: 28/50 | Iter: 200/487 | x_loss: 0.077730 | y_loss: 0.075305 | z_loss: 0.078406 | degree_error:2.769
+2020-01-30 20:33:33,011: Epoch: 28/50 | Iter: 300/487 | x_loss: 0.077316 | y_loss: 0.075804 | z_loss: 0.079515 | degree_error:3.555
+2020-01-30 20:33:40,253: A better validation degrees error 3.232009172439575
+2020-01-30 20:33:46,366: Epoch: 28/50 | Iter: 400/487 | x_loss: 0.078549 | y_loss: 0.075295 | z_loss: 0.076687 | degree_error:3.114
+2020-01-30 20:33:53,619: A better validation degrees error 3.151698589324951
+2020-01-30 20:34:05,448: Epoch: 29/50 | Iter: 100/487 | x_loss: 0.077679 | y_loss: 0.075619 | z_loss: 0.077522 | degree_error:3.040
+2020-01-30 20:34:12,745: A better validation degrees error 3.7132387161254883
+2020-01-30 20:34:18,806: Epoch: 29/50 | Iter: 200/487 | x_loss: 0.077220 | y_loss: 0.075597 | z_loss: 0.078021 | degree_error:2.767
+2020-01-30 20:34:26,102: A better validation degrees error 3.274340867996216
+2020-01-30 20:34:32,202: Epoch: 29/50 | Iter: 300/487 | x_loss: 0.077799 | y_loss: 0.075785 | z_loss: 0.077050 | degree_error:2.614
+2020-01-30 20:34:39,482: A better validation degrees error 3.158142566680908
+2020-01-30 20:34:45,561: Epoch: 29/50 | Iter: 400/487 | x_loss: 0.077750 | y_loss: 0.075559 | z_loss: 0.077118 | degree_error:2.870
+2020-01-30 20:35:04,709: Epoch: 30/50 | Iter: 100/487 | x_loss: 0.077502 | y_loss: 0.075033 | z_loss: 0.077867 | degree_error:2.408
+2020-01-30 20:35:11,995: A better validation degrees error 3.434446096420288
+2020-01-30 20:35:18,068: Epoch: 30/50 | Iter: 200/487 | x_loss: 0.076533 | y_loss: 0.077583 | z_loss: 0.078315 | degree_error:3.022
+2020-01-30 20:35:25,518: A better validation degrees error 3.167271852493286
+2020-01-30 20:35:31,587: Epoch: 30/50 | Iter: 300/487 | x_loss: 0.076678 | y_loss: 0.075357 | z_loss: 0.078637 | degree_error:2.644
+2020-01-30 20:35:44,486: Epoch: 30/50 | Iter: 400/487 | x_loss: 0.077641 | y_loss: 0.075149 | z_loss: 0.079531 | degree_error:3.088
+2020-01-30 20:36:03,712: Epoch: 31/50 | Iter: 100/487 | x_loss: 0.076333 | y_loss: 0.076009 | z_loss: 0.078456 | degree_error:2.922
+2020-01-30 20:36:11,019: A better validation degrees error 3.087562322616577
+2020-01-30 20:36:17,104: Epoch: 31/50 | Iter: 200/487 | x_loss: 0.076837 | y_loss: 0.075602 | z_loss: 0.078458 | degree_error:2.582
+2020-01-30 20:36:30,440: Epoch: 31/50 | Iter: 300/487 | x_loss: 0.078591 | y_loss: 0.075384 | z_loss: 0.077506 | degree_error:2.961
+2020-01-30 20:36:43,787: Epoch: 31/50 | Iter: 400/487 | x_loss: 0.078387 | y_loss: 0.077571 | z_loss: 0.081021 | degree_error:4.104
+2020-01-30 20:37:02,996: Epoch: 32/50 | Iter: 100/487 | x_loss: 0.077900 | y_loss: 0.075021 | z_loss: 0.077704 | degree_error:2.383
+2020-01-30 20:37:10,256: A better validation degrees error 3.126286268234253
+2020-01-30 20:37:16,304: Epoch: 32/50 | Iter: 200/487 | x_loss: 0.078502 | y_loss: 0.075316 | z_loss: 0.078675 | degree_error:3.101
+2020-01-30 20:37:23,587: A better validation degrees error 3.0990445613861084
+2020-01-30 20:37:29,685: Epoch: 32/50 | Iter: 300/487 | x_loss: 0.077846 | y_loss: 0.076631 | z_loss: 0.076528 | degree_error:2.706
+2020-01-30 20:37:43,062: Epoch: 32/50 | Iter: 400/487 | x_loss: 0.077513 | y_loss: 0.076612 | z_loss: 0.077910 | degree_error:3.156
+2020-01-30 20:38:02,244: Epoch: 33/50 | Iter: 100/487 | x_loss: 0.076898 | y_loss: 0.077367 | z_loss: 0.082633 | degree_error:3.551
+2020-01-30 20:38:09,522: A better validation degrees error 3.117626905441284
+2020-01-30 20:38:15,605: Epoch: 33/50 | Iter: 200/487 | x_loss: 0.077301 | y_loss: 0.075526 | z_loss: 0.076585 | degree_error:2.170
+2020-01-30 20:38:28,933: Epoch: 33/50 | Iter: 300/487 | x_loss: 0.075862 | y_loss: 0.075769 | z_loss: 0.077672 | degree_error:2.336
+2020-01-30 20:38:36,213: A better validation degrees error 2.9640731811523438
+2020-01-30 20:38:42,277: Epoch: 33/50 | Iter: 400/487 | x_loss: 0.076861 | y_loss: 0.075848 | z_loss: 0.078016 | degree_error:2.439
+2020-01-30 20:39:01,445: Epoch: 34/50 | Iter: 100/487 | x_loss: 0.077183 | y_loss: 0.075583 | z_loss: 0.076371 | degree_error:2.394
+2020-01-30 20:39:08,712: A better validation degrees error 3.113910675048828
+2020-01-30 20:39:14,072: Epoch: 34/50 | Iter: 200/487 | x_loss: 0.076846 | y_loss: 0.075531 | z_loss: 0.078543 | degree_error:3.003
+2020-01-30 20:39:27,347: Epoch: 34/50 | Iter: 300/487 | x_loss: 0.076741 | y_loss: 0.076347 | z_loss: 0.076103 | degree_error:2.666
+2020-01-30 20:39:34,636: A better validation degrees error 3.063296318054199
+2020-01-30 20:39:40,753: Epoch: 34/50 | Iter: 400/487 | x_loss: 0.076529 | y_loss: 0.077227 | z_loss: 0.077297 | degree_error:2.827
+2020-01-30 20:39:48,035: A better validation degrees error 3.04874324798584
+2020-01-30 20:39:59,450: Epoch: 35/50 | Iter: 100/487 | x_loss: 0.079112 | y_loss: 0.076254 | z_loss: 0.076881 | degree_error:3.501
+2020-01-30 20:40:06,734: A better validation degrees error 3.0308313369750977
+2020-01-30 20:40:12,801: Epoch: 35/50 | Iter: 200/487 | x_loss: 0.077579 | y_loss: 0.076696 | z_loss: 0.080154 | degree_error:3.958
+2020-01-30 20:40:20,137: A better validation degrees error 2.9914467334747314
+2020-01-30 20:40:25,655: Epoch: 35/50 | Iter: 300/487 | x_loss: 0.076280 | y_loss: 0.075735 | z_loss: 0.077654 | degree_error:2.283
+2020-01-30 20:40:39,119: Epoch: 35/50 | Iter: 400/487 | x_loss: 0.077482 | y_loss: 0.075704 | z_loss: 0.077556 | degree_error:3.361
+2020-01-30 20:40:46,356: A better validation degrees error 2.9795687198638916
+2020-01-30 20:40:58,268: Epoch: 36/50 | Iter: 100/487 | x_loss: 0.078355 | y_loss: 0.075985 | z_loss: 0.076148 | degree_error:2.811
+2020-01-30 20:41:05,539: A better validation degrees error 3.109060049057007
+2020-01-30 20:41:11,004: Epoch: 36/50 | Iter: 200/487 | x_loss: 0.078413 | y_loss: 0.076525 | z_loss: 0.077835 | degree_error:3.315
+2020-01-30 20:41:18,299: A better validation degrees error 2.9170033931732178
+2020-01-30 20:41:24,405: Epoch: 36/50 | Iter: 300/487 | x_loss: 0.075063 | y_loss: 0.075703 | z_loss: 0.079161 | degree_error:3.248
+2020-01-30 20:41:37,744: Epoch: 36/50 | Iter: 400/487 | x_loss: 0.076990 | y_loss: 0.075138 | z_loss: 0.077761 | degree_error:2.526
+2020-01-30 20:41:56,924: Epoch: 37/50 | Iter: 100/487 | x_loss: 0.076766 | y_loss: 0.076562 | z_loss: 0.078251 | degree_error:2.876
+2020-01-30 20:42:04,208: A better validation degrees error 3.274986743927002
+2020-01-30 20:42:10,317: Epoch: 37/50 | Iter: 200/487 | x_loss: 0.077691 | y_loss: 0.075052 | z_loss: 0.078145 | degree_error:2.906
+2020-01-30 20:42:17,604: A better validation degrees error 3.031726598739624
+2020-01-30 20:42:23,685: Epoch: 37/50 | Iter: 300/487 | x_loss: 0.077251 | y_loss: 0.075391 | z_loss: 0.077957 | degree_error:2.365
+2020-01-30 20:42:30,975: A better validation degrees error 2.9596030712127686
+2020-01-30 20:42:36,593: Epoch: 37/50 | Iter: 400/487 | x_loss: 0.076945 | y_loss: 0.075955 | z_loss: 0.077232 | degree_error:2.829
+2020-01-30 20:42:43,898: A better validation degrees error 2.911491632461548
+2020-01-30 20:42:55,828: Epoch: 38/50 | Iter: 100/487 | x_loss: 0.078815 | y_loss: 0.077560 | z_loss: 0.077900 | degree_error:3.810
+2020-01-30 20:43:03,095: A better validation degrees error 2.942993640899658
+2020-01-30 20:43:09,179: Epoch: 38/50 | Iter: 200/487 | x_loss: 0.076463 | y_loss: 0.075388 | z_loss: 0.079047 | degree_error:2.887
+2020-01-30 20:43:22,510: Epoch: 38/50 | Iter: 300/487 | x_loss: 0.076438 | y_loss: 0.076273 | z_loss: 0.078393 | degree_error:2.857
+2020-01-30 20:43:35,932: Epoch: 38/50 | Iter: 400/487 | x_loss: 0.078094 | y_loss: 0.076124 | z_loss: 0.078479 | degree_error:2.892
+2020-01-30 20:43:43,263: A better validation degrees error 2.896183729171753
+2020-01-30 20:43:54,730: Epoch: 39/50 | Iter: 100/487 | x_loss: 0.076910 | y_loss: 0.076650 | z_loss: 0.077227 | degree_error:2.756
+2020-01-30 20:44:02,085: A better validation degrees error 3.109938859939575
+2020-01-30 20:44:07,919: Epoch: 39/50 | Iter: 200/487 | x_loss: 0.077209 | y_loss: 0.075403 | z_loss: 0.078029 | degree_error:2.776
+2020-01-30 20:44:15,189: A better validation degrees error 2.9341514110565186
+2020-01-30 20:44:21,245: Epoch: 39/50 | Iter: 300/487 | x_loss: 0.076608 | y_loss: 0.075088 | z_loss: 0.077567 | degree_error:1.859
+2020-01-30 20:44:28,506: A better validation degrees error 2.897625684738159
+2020-01-30 20:44:34,560: Epoch: 39/50 | Iter: 400/487 | x_loss: 0.076367 | y_loss: 0.076023 | z_loss: 0.077906 | degree_error:2.973
+2020-01-30 20:44:53,658: Epoch: 40/50 | Iter: 100/487 | x_loss: 0.076849 | y_loss: 0.075463 | z_loss: 0.078043 | degree_error:2.455
+2020-01-30 20:45:00,929: A better validation degrees error 2.943525552749634
+2020-01-30 20:45:07,003: Epoch: 40/50 | Iter: 200/487 | x_loss: 0.077142 | y_loss: 0.075373 | z_loss: 0.078135 | degree_error:2.834
+2020-01-30 20:45:14,297: A better validation degrees error 2.8212034702301025
+2020-01-30 20:45:20,440: Epoch: 40/50 | Iter: 300/487 | x_loss: 0.077230 | y_loss: 0.074615 | z_loss: 0.077932 | degree_error:1.886
+2020-01-30 20:45:33,886: Epoch: 40/50 | Iter: 400/487 | x_loss: 0.076135 | y_loss: 0.075701 | z_loss: 0.077284 | degree_error:2.237
+2020-01-30 20:45:53,001: Epoch: 41/50 | Iter: 100/487 | x_loss: 0.077661 | y_loss: 0.075400 | z_loss: 0.078980 | degree_error:3.664
+2020-01-30 20:46:00,263: A better validation degrees error 2.859318733215332
+2020-01-30 20:46:06,324: Epoch: 41/50 | Iter: 200/487 | x_loss: 0.076086 | y_loss: 0.077395 | z_loss: 0.077641 | degree_error:2.824
+2020-01-30 20:46:19,652: Epoch: 41/50 | Iter: 300/487 | x_loss: 0.077388 | y_loss: 0.076745 | z_loss: 0.077115 | degree_error:3.302
+2020-01-30 20:46:32,932: Epoch: 41/50 | Iter: 400/487 | x_loss: 0.077095 | y_loss: 0.074791 | z_loss: 0.075902 | degree_error:1.794
+2020-01-30 20:46:52,067: Epoch: 42/50 | Iter: 100/487 | x_loss: 0.077294 | y_loss: 0.075679 | z_loss: 0.077560 | degree_error:2.825
+2020-01-30 20:46:59,339: A better validation degrees error 2.8331048488616943
+2020-01-30 20:47:05,387: Epoch: 42/50 | Iter: 200/487 | x_loss: 0.074609 | y_loss: 0.076601 | z_loss: 0.077843 | degree_error:2.523
+2020-01-30 20:47:18,607: Epoch: 42/50 | Iter: 300/487 | x_loss: 0.075198 | y_loss: 0.075972 | z_loss: 0.077888 | degree_error:2.504
+2020-01-30 20:47:31,123: Epoch: 42/50 | Iter: 400/487 | x_loss: 0.075969 | y_loss: 0.075857 | z_loss: 0.078089 | degree_error:2.595
+2020-01-30 20:47:50,342: Epoch: 43/50 | Iter: 100/487 | x_loss: 0.075621 | y_loss: 0.075262 | z_loss: 0.077767 | degree_error:2.100
+2020-01-30 20:47:57,879: A better validation degrees error 2.8533079624176025
+2020-01-30 20:48:03,828: Epoch: 43/50 | Iter: 200/487 | x_loss: 0.075280 | y_loss: 0.076064 | z_loss: 0.076247 | degree_error:2.474
+2020-01-30 20:48:16,785: Epoch: 43/50 | Iter: 300/487 | x_loss: 0.077627 | y_loss: 0.074942 | z_loss: 0.078055 | degree_error:2.817
+2020-01-30 20:48:30,110: Epoch: 43/50 | Iter: 400/487 | x_loss: 0.079312 | y_loss: 0.076697 | z_loss: 0.078698 | degree_error:3.894
+2020-01-30 20:48:48,804: Epoch: 44/50 | Iter: 100/487 | x_loss: 0.076839 | y_loss: 0.075160 | z_loss: 0.077805 | degree_error:1.982
+2020-01-30 20:48:56,074: A better validation degrees error 2.691669464111328
+2020-01-30 20:49:02,120: Epoch: 44/50 | Iter: 200/487 | x_loss: 0.078802 | y_loss: 0.074627 | z_loss: 0.077900 | degree_error:2.795
+2020-01-30 20:49:15,395: Epoch: 44/50 | Iter: 300/487 | x_loss: 0.076892 | y_loss: 0.074772 | z_loss: 0.078035 | degree_error:2.123
+2020-01-30 20:49:28,665: Epoch: 44/50 | Iter: 400/487 | x_loss: 0.077404 | y_loss: 0.075284 | z_loss: 0.078437 | degree_error:2.890
+2020-01-30 20:49:47,805: Epoch: 45/50 | Iter: 100/487 | x_loss: 0.076228 | y_loss: 0.075269 | z_loss: 0.077901 | degree_error:2.339
+2020-01-30 20:49:55,112: A better validation degrees error 2.7841203212738037
+2020-01-30 20:50:01,183: Epoch: 45/50 | Iter: 200/487 | x_loss: 0.076770 | y_loss: 0.074833 | z_loss: 0.076779 | degree_error:1.919
+2020-01-30 20:50:14,481: Epoch: 45/50 | Iter: 300/487 | x_loss: 0.077672 | y_loss: 0.080808 | z_loss: 0.078256 | degree_error:4.613
+2020-01-30 20:50:27,769: Epoch: 45/50 | Iter: 400/487 | x_loss: 0.076513 | y_loss: 0.075004 | z_loss: 0.078131 | degree_error:2.337
+2020-01-30 20:50:46,871: Epoch: 46/50 | Iter: 100/487 | x_loss: 0.076713 | y_loss: 0.075892 | z_loss: 0.076635 | degree_error:2.385
+2020-01-30 20:50:54,171: A better validation degrees error 2.6601271629333496
+2020-01-30 20:51:00,242: Epoch: 46/50 | Iter: 200/487 | x_loss: 0.075422 | y_loss: 0.075751 | z_loss: 0.077861 | degree_error:2.304
+2020-01-30 20:51:13,541: Epoch: 46/50 | Iter: 300/487 | x_loss: 0.076191 | y_loss: 0.075611 | z_loss: 0.078211 | degree_error:2.352
+2020-01-30 20:51:26,940: Epoch: 46/50 | Iter: 400/487 | x_loss: 0.074910 | y_loss: 0.075272 | z_loss: 0.080688 | degree_error:3.035
+2020-01-30 20:51:45,766: Epoch: 47/50 | Iter: 100/487 | x_loss: 0.075845 | y_loss: 0.074993 | z_loss: 0.076789 | degree_error:2.204
+2020-01-30 20:51:53,081: A better validation degrees error 2.691676139831543
+2020-01-30 20:51:59,031: Epoch: 47/50 | Iter: 200/487 | x_loss: 0.076719 | y_loss: 0.074994 | z_loss: 0.077935 | degree_error:2.406
+2020-01-30 20:52:12,366: Epoch: 47/50 | Iter: 300/487 | x_loss: 0.074756 | y_loss: 0.075885 | z_loss: 0.077236 | degree_error:1.992
+2020-01-30 20:52:19,638: A better validation degrees error 2.67871356010437
+2020-01-30 20:52:25,715: Epoch: 47/50 | Iter: 400/487 | x_loss: 0.074525 | y_loss: 0.076250 | z_loss: 0.077621 | degree_error:2.582
+2020-01-30 20:52:32,980: A better validation degrees error 2.572754144668579
+2020-01-30 20:52:44,890: Epoch: 48/50 | Iter: 100/487 | x_loss: 0.078223 | y_loss: 0.075314 | z_loss: 0.077736 | degree_error:2.828
+2020-01-30 20:52:52,166: A better validation degrees error 2.697956085205078
+2020-01-30 20:52:58,240: Epoch: 48/50 | Iter: 200/487 | x_loss: 0.075896 | y_loss: 0.076184 | z_loss: 0.078440 | degree_error:2.657
+2020-01-30 20:53:11,570: Epoch: 48/50 | Iter: 300/487 | x_loss: 0.074515 | y_loss: 0.075596 | z_loss: 0.079706 | degree_error:2.864
+2020-01-30 20:53:19,244: A better validation degrees error 2.664440870285034
+2020-01-30 20:53:25,326: Epoch: 48/50 | Iter: 400/487 | x_loss: 0.078018 | y_loss: 0.076576 | z_loss: 0.077277 | degree_error:3.076
+2020-01-30 20:53:43,954: Epoch: 49/50 | Iter: 100/487 | x_loss: 0.076603 | y_loss: 0.075024 | z_loss: 0.075880 | degree_error:1.619
+2020-01-30 20:53:51,231: A better validation degrees error 2.643235206604004
+2020-01-30 20:53:57,292: Epoch: 49/50 | Iter: 200/487 | x_loss: 0.076811 | y_loss: 0.074935 | z_loss: 0.076757 | degree_error:1.847
+2020-01-30 20:54:04,552: A better validation degrees error 2.6001250743865967
+2020-01-30 20:54:10,680: Epoch: 49/50 | Iter: 300/487 | x_loss: 0.076565 | y_loss: 0.074865 | z_loss: 0.077305 | degree_error:2.003
+2020-01-30 20:54:24,003: Epoch: 49/50 | Iter: 400/487 | x_loss: 0.076420 | y_loss: 0.075438 | z_loss: 0.078100 | degree_error:2.512
+2020-01-30 20:54:43,150: Epoch: 50/50 | Iter: 100/487 | x_loss: 0.076637 | y_loss: 0.075268 | z_loss: 0.076578 | degree_error:1.847
+2020-01-30 20:54:50,411: A better validation degrees error 2.7696986198425293
+2020-01-30 20:54:55,979: Epoch: 50/50 | Iter: 200/487 | x_loss: 0.076128 | y_loss: 0.076161 | z_loss: 0.078253 | degree_error:2.522
+2020-01-30 20:55:03,316: A better validation degrees error 2.5598747730255127
+2020-01-30 20:55:09,455: Epoch: 50/50 | Iter: 300/487 | x_loss: 0.076841 | y_loss: 0.076174 | z_loss: 0.078475 | degree_error:2.727
+2020-01-30 20:55:22,390: Epoch: 50/50 | Iter: 400/487 | x_loss: 0.076573 | y_loss: 0.076306 | z_loss: 0.077133 | degree_error:2.561
