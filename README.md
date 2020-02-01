@@ -32,6 +32,11 @@ Avg angle error on training data(50 epoches): 1.779 degree(s)<br>
 Avg angle error on validation data(50 epoches): 2.359545946121216 degree(s)<br>
 Training loss(50 epoches): x_loss: 0.074635 | y_loss: 0.073857 | z_loss: 0.077535<br>
 
+## Results (one right-vector)
+Avg angle error on training data(50 epoches): 2.561 degree(s)<br>
+Avg angle error on validation data(50 epoches): 2.7696986198425293 degree(s)<br>
+Training loss(50 epoches): x_loss: 0.076573 | y_loss: 0.076306 | z_loss: 0.077133 <br>
+
 ## collection score plot (one front-vector)
 <img src="https://github.com/chuzcjoe/3Dof-Object-Pose-Estimation/raw/master/collect_score.png" width="500">
 
