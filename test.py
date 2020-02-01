@@ -25,17 +25,19 @@ def parse_args():
     parser.add_argument('--save_dir', dest='save_dir', help='directory for saving drawn pic',
                         default='/home/zhiwen/pose/3Dof-Object-Pose-Estimation-master/visualization', type=str)
     parser.add_argument('--show_front', dest='show_front', help='show front or not',
-                        default=True, type=bool)
+                        default=False, type=bool)
     parser.add_argument('--analysis', dest='analysis', help='analysis result or not',
                         default=False, type=bool)
     parser.add_argument('--collect_score', dest='collect_score', help='show huge error or not',
-                        default=True, type=bool)
+                        default=False, type=bool)
     parser.add_argument('--num_classes', dest='num_classes', help='number of classify',
                         default=66, type=int)
     parser.add_argument('--width_mult', dest='width_mult', choices=[0.5, 1.0], help='mobilenet_v2 width_mult',
                         default=1.0, type=float)
     parser.add_argument('--input_size', dest='input_size', choices=[224, 192, 160, 128, 96], help='size of input images',
                         default=224, type=int)
+    parser.add_argument('--write_error', dest='write_error', choices=[224, 192, 160, 128, 96], help='size of input images',
+                        default=True, type=int)
 
     args = parser.parse_args()
     return args
@@ -74,12 +76,18 @@ def draw_attention_vector(vector_label, pred_vector, img_path, args):
 def test(model, test_loader, softmax, args):
     if args.analysis:
         utils.mkdir(os.path.join(args.save_dir, 'analysis'))
-        loss_dict = {'img_name': list(), 'angles': list(), 'degree_error': list()}
+        #loss_dict = {'img_name': list(), 'angles': list(), 'degree_error': list()}
+        loss_dict = {'img_name': list(),'degree_error': list()}
+
+    if args.write_error:
+        error_5 = {'img_name':list(), 'degree_error': list()}
+
     error = 0.0
     total = 0.0
     score = 0.0
     for i, (images, classify_label, vector_label, names) in enumerate(tqdm.tqdm(test_loader)):
         with torch.no_grad():
+            print(images.shape)
             images = images.cuda(0)
             vector_label = vector_label.cuda(0)
 
@@ -93,11 +101,17 @@ def test(model, test_loader, softmax, args):
             cos_value = utils.vector_cos(pred_vector, vector_label)
             degrees_error = torch.acos(cos_value) * 180 / np.pi
 
+            if args.write_error:
+                for k in range(len(names)):
+                    if degrees_error[k] > 10.0:
+                           error_5['img_name'].append(names[k])
+                           error_5['degree_error'].append(float(degrees_error[k]))
+
             # save euler angle and degrees error to loss_dict
             if args.analysis:
-                for k in range(len(angle_label)):
+                for k in range(len(names)):
                     loss_dict['img_name'].append(names[k])
-                    loss_dict['angles'].append(angle_label[k].tolist())  # pitch,yaw,roll
+                    #loss_dict['angles'].append(angle_label[k].tolist())  # pitch,yaw,roll
                     loss_dict['degree_error'].append(float(degrees_error[k]))
 
             # collect error
@@ -118,6 +132,14 @@ def test(model, test_loader, softmax, args):
     avg_error = error / total
     total_score = score / total
     print('Average degree Error:%.4f | score with error<10º:%.4f' % (avg_error.item(), total_score.item()))
+
+
+    if args.write_error:
+        print("Writing error to local txt file.")
+        with open("front_error_10.txt",'w') as f:
+                for i in range(len(error_5["img_name"])):
+                         f.write(error_5["img_name"][i]+","+str(error_5["degree_error"][i])+'\n')
+        print("Done writing.")
 
     # save analysis of loss distribute
     if args.analysis:
