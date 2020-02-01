@@ -2,7 +2,7 @@
 3 Dof object pose estimation with new representation
 
 ## Train
-<span font="color:blue">some *This is Blue italic.* text</span>
+Roses are <span style="color:red">red</span>, violets are <span style="color:blue">blue</span>.Roses are <span style="color:red">red</span>, violets are <span style="color:blue">blue</span>.
 
 python train.py  --num_classes [33,66] --num_epochs --lr --lr_decay --unfreeze 
 
