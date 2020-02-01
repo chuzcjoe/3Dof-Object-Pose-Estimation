@@ -44,5 +44,5 @@ Training loss(50 epoches): x_loss: 0.074635 | y_loss: 0.073857 | z_loss: 0.07753
 <img src="https://github.com/chuzcjoe/3Dof-Object-Pose-Estimation/raw/master/imgs/merge.jpg" width="800">
 
 ## Visualizing predicted right vector + ground-truth lables
-<img src="https://github.com/chuzcjoe/3Dof-Object-Pose-Estimation/raw/master/imgs/merge.jpg" width="800">
+<img src="https://github.com/chuzcjoe/3Dof-Object-Pose-Estimation/raw/master/imgs/merge_right+label.jpg" width="800">
 
