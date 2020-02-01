@@ -50,13 +50,13 @@ Training loss(50 epoches): x_loss: 0.076573 | y_loss: 0.076306 | z_loss: 0.07713
 ## Visualizing predicted right vector
 <img src="https://github.com/chuzcjoe/3Dof-Object-Pose-Estimation/raw/master/imgs/merge.jpg" width="800">
 
-## Visualizing predicted right vector + ground-truth lables
+## Visualizing predicted right vector + ground-truth labels
 <img src="https://github.com/chuzcjoe/3Dof-Object-Pose-Estimation/raw/master/imgs/merge_right+label.jpg" width="800">
 
 ## Visualizing predicted front vector
 <img src="https://github.com/chuzcjoe/3Dof-Object-Pose-Estimation/raw/master/imgs/merge_front.jpg" width="800">
 
-## Visualizing predicted front vector + ground-truth lables
+## Visualizing predicted front vector + ground-truth labels
 <img src="https://github.com/chuzcjoe/3Dof-Object-Pose-Estimation/raw/master/imgs/merge_front+label.jpg" width="800">
 
 ## TODO
