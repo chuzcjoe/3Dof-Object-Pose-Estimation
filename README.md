@@ -40,6 +40,9 @@ Training loss(50 epoches): x_loss: 0.074635 | y_loss: 0.073857 | z_loss: 0.07753
 
 [youtube(one vector)](https://www.youtube.com/watch?v=Gxo8jXZ0b2Q)
 
-## Visualizing predicted front vector
+## Visualizing predicted right vector
+<img src="https://github.com/chuzcjoe/3Dof-Object-Pose-Estimation/raw/master/imgs/merge.jpg" width="800">
+
+## Visualizing predicted right vector + ground-truth lables
 <img src="https://github.com/chuzcjoe/3Dof-Object-Pose-Estimation/raw/master/imgs/merge.jpg" width="800">
 
