@@ -40,6 +40,8 @@ Training loss(50 epoches): x_loss: 0.076573 | y_loss: 0.076306 | z_loss: 0.07713
 ## collection score plot (one front-vector)
 <img src="https://github.com/chuzcjoe/3Dof-Object-Pose-Estimation/raw/master/imgs/collect_score.png" width="500">
 
+## collection score plot (one right-vector)
+<img src="https://github.com/chuzcjoe/3Dof-Object-Pose-Estimation/raw/master/imgs/collect_score_right.png" width="500">
 
 ## Video demo link (one front-vector)
 
