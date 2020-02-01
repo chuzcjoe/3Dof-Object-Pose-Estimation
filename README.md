@@ -2,7 +2,7 @@
 3 Dof object pose estimation with new representation
 
 ## Train
-<span style="color:blue">some *This is Blue italic.* text</span>
+<span font="color:blue">some *This is Blue italic.* text</span>
 
 python train.py  --num_classes [33,66] --num_epochs --lr --lr_decay --unfreeze 
 
