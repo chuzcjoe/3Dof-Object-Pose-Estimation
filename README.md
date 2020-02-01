@@ -37,6 +37,9 @@ Avg angle error on training data(50 epoches): 2.561 degree(s)<br>
 Avg angle error on validation data(50 epoches): 2.7696986198425293 degree(s)<br>
 Training loss(50 epoches): x_loss: 0.076573 | y_loss: 0.076306 | z_loss: 0.077133 <br>
 
+## Error distribution on the entire dataset
+<img src="https://github.com/chuzcjoe/3Dof-Object-Pose-Estimation/raw/master/imgs/MobileNetV2_1.png" width="600">
+
 ## collection score plot (one front-vector)
 <img src="https://github.com/chuzcjoe/3Dof-Object-Pose-Estimation/raw/master/imgs/collect_score.png" width="500">
 
