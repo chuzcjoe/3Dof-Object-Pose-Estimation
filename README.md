@@ -62,6 +62,8 @@ Training loss(50 epoches): x_loss: 0.076573 | y_loss: 0.076306 | z_loss: 0.07713
 ## Visualizing predicted front vector + ground-truth labels
 <img src="https://github.com/chuzcjoe/3Dof-Object-Pose-Estimation/raw/master/imgs/merge_front+label.jpg" width="800">
 
-## TODO
-### bad cases (large angle error)
+## Bad Cases
+
+### angle error greater than 10 degrees (front vector)
+[base case images](https://drive.google.com/open?id=1T75OLTHsl9N-bFtu5O1rLZ7FZXL6K0Aa)
 
