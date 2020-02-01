@@ -2,6 +2,7 @@
 3 Dof object pose estimation with new representation
 
 ## Train
+<p>Some Markdown text with <span style="color:blue">some <em>blue</em> text</span>.</p>
 
 python train.py  --num_classes [33,66] --num_epochs --lr --lr_decay --unfreeze 
 
