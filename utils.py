@@ -152,6 +152,17 @@ def draw_axis(img, pitch, yaw, roll, tdx=None, tdy=None, size=100):
 
     return img
 
+def remove_distortion(img):
+    K = np.array([[424.57214422800234, 0.0, 464.31976295418264], 
+              [0.0, 424.9291201199454, 362.78142329711255], 
+              [0.0, 0.0, 1.0]])
+
+    D = np.array([[-0.02364380260312553], [0.03507545568167827], [-0.059312268236712096], [0.03479088452999722]])
+    
+    map1, map2 = cv2.fisheye.initUndistortRectifyMap(K, D, np.eye(3), K, DIM, cv2.CV_16SC2)
+    undistorted_img = cv2.remap(crop_img, map1, map2, interpolation=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT)
+    
+    return undistorted_img
 
 def get_label_from_txt(txt_path):
     with open(txt_path, 'r') as fr:
