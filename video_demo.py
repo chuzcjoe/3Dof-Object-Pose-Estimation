@@ -1,5 +1,6 @@
 import cv2
 from test_on_img import Test
+from utils import remove_distortion
 from net import MobileNetV2
 from torchvision import transforms
 from net import MobileNetV2
@@ -36,7 +37,8 @@ if __name__ == '__main__':
     while 1:
         _, frame = cap.read()
         draw_img = frame.copy()
-
+	
+	frame = remove_distortion(frame)
         img = cv2.resize(frame,(224,224))
         img = transform(img)
         img = img.unsqueeze(0)
