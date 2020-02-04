@@ -153,11 +153,20 @@ def draw_axis(img, pitch, yaw, roll, tdx=None, tdy=None, size=100):
     return img
 
 def remove_distortion(img):
+    DIM = (960, 720)
+    
+    w, h, _ = img.size
+    wt = 960
+    ht = 720
+    border = [(w-wt) / 2, (h-ht)/2, w - (w-wt)/2, h - (h-ht)/2]
+    
     K = np.array([[424.57214422800234, 0.0, 464.31976295418264], 
               [0.0, 424.9291201199454, 362.78142329711255], 
               [0.0, 0.0, 1.0]])
 
     D = np.array([[-0.02364380260312553], [0.03507545568167827], [-0.059312268236712096], [0.03479088452999722]])
+    
+    crop_img = img[border[1]:border[3],border[0]:border[2]]
     
     map1, map2 = cv2.fisheye.initUndistortRectifyMap(K, D, np.eye(3), K, DIM, cv2.CV_16SC2)
     undistorted_img = cv2.remap(crop_img, map1, map2, interpolation=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT)
