@@ -166,7 +166,7 @@ def remove_distortion(img):
 
     D = np.array([[-0.02364380260312553], [0.03507545568167827], [-0.059312268236712096], [0.03479088452999722]])
     
-    crop_img = img[border[1]:border[3],border[0]:border[2]]
+    crop_img = img[border[1]:border[3],border[0]:border[2],:]
     
     map1, map2 = cv2.fisheye.initUndistortRectifyMap(K, D, np.eye(3), K, DIM, cv2.CV_16SC2)
     undistorted_img = cv2.remap(crop_img, map1, map2, interpolation=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT)
