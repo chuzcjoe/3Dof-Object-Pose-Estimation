@@ -32,7 +32,8 @@ if __name__ == '__main__':
     test = Test(MobileNetV2, MobileNetV2, args.snapshot1, args.snapshot2, 66)
     transform = transforms.Compose([transforms.ToTensor(),transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])])
 
-
+    # make 3d axes
+    fig = plt.figure()
 
     while 1:
         _, frame = cap.read()
@@ -42,8 +43,9 @@ if __name__ == '__main__':
         img = cv2.resize(frame,(224,224))
         img = transform(img)
         img = img.unsqueeze(0)
-
-        test.test_per_img(img,draw_img)
+	
+        ax  = plt.axes(projection='3d')	
+        test.test_per_img(img,draw_img,ax)
 
         k = cv2.waitKey(30) & 0xff
         if k == 27:
