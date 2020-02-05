@@ -183,18 +183,21 @@ def draw_3d_coor(v1, v2, ax):
     zero = np.zeros(3) 
     # plot test data
     x, y, z = zip(zero, v1)
-    plt.plot(x, y, z, '-r', linewidth=3)
+    plt.plot(y, x, z, '-r', linewidth=3)
     
     x, y, z = zip(zero, v2)
-    plt.plot(x, y, z, '-g', linewidth=3)
+    plt.plot(y, x, z, '-g', linewidth=3)
     
-    print("draw")
+    
 
     ax.set_xlim(-1, 1)
     ax.set_ylim(-1, 1)
     ax.set_zlim(-1, 1)
 
-    plt.show()
+    plt.draw()
+    print("draw")
+    plt.pause(0.05)
+    plt.cla()
 
 def get_label_from_txt(txt_path):
     with open(txt_path, 'r') as fr:
