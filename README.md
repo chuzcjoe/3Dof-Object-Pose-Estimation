@@ -23,9 +23,15 @@ python test_on_img.py --img --snapshot
 
 python video_demo.py --video --snapshot
 
+
 ## Dataset
 Training size: 7800 <br>
 Validation size: 1950<br>
+
+raw video: 1280 * 720    40FPS
+processed image(remove distortion): 960 * 720
+
+network input: 244 * 244
 
 ## Results (one front-vector)
 Avg angle error on training data(50 epoches): 1.779 degree(s)<br>
