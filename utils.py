@@ -153,8 +153,6 @@ def draw_axis(img, pitch, yaw, roll, tdx=None, tdy=None, size=100):
     return img
 
 def remove_distortion(img):
-    DIM = (960, 720)
-    
     w, h, _ = img.size
     wt = 960
     ht = 720
