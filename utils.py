@@ -7,7 +7,7 @@ import cv2
 import torch
 import numpy as np
 import matplotlib
-matplotlib.use("Agg")
+matplotlib.use("Qt4Agg")
 import math
 import matplotlib.pyplot as plt
 from math import cos, sin
