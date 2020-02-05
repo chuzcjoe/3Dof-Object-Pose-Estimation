@@ -11,6 +11,7 @@ matplotlib.use("Agg")
 import math
 import matplotlib.pyplot as plt
 from math import cos, sin
+from mpl_toolkits.mplot3d.axes3d import Axes3D
 #from rotation import Rotation as R
 
 
@@ -174,6 +175,26 @@ def remove_distortion(img):
     undistorted_img = cv2.remap(crop_img, map1, map2, interpolation=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT)
     
     return undistorted_img
+
+
+
+def draw_3d_coor(v1, v2, ax):
+
+    zero = np.zeros(3) 
+    # plot test data
+    x, y, z = zip(zero, v1)
+    plt.plot(x, y, z, '-r', linewidth=3)
+    
+    x, y, z = zip(zero, v2)
+    plt.plot(x, y, z, '-g', linewidth=3)
+    
+    print("draw")
+
+    ax.set_xlim(-1, 1)
+    ax.set_ylim(-1, 1)
+    ax.set_zlim(-1, 1)
+
+    plt.show()
 
 def get_label_from_txt(txt_path):
     with open(txt_path, 'r') as fr:
